@@ -1,0 +1,178 @@
+% Curriculum Vitae
+% Rui Souto
+% Email: ruipsouto@gmail.com
+% Repo: https://github.com/ruipsouto/cv
+% Typography from Geoff Boeing (https://github.com/gboeing/cv)
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{tabto} % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+\usepackage{fontawesome} % icon set and toolkit
+
+% Personal information
+\newcommand{\myname}{Your Name}
+\newcommand{\myemail}{your@email.com}
+\newcommand{\myphone}{(+44) xxx xxx xxxx}
+\newcommand{\mylinkedin}{profile}
+\newcommand{\mygithub}{profile}
+\newcommand{\mykeywords}{software engineering, data engineering, data science, web development}
+
+% Define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% Set more compacted lists
+\setitemize{noitemsep,topsep=1pt,parsep=0pt,partopsep=5pt}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% Set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{0em}{}[{\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{20pt}{12pt plus 2pt minus 2pt}
+
+% Set page margins
+\geometry{body={6.5in, 9.0in},
+    margin=0.5in}
+
+% Prevent paragraph indentation
+\setlength\parindent{0em}
+\setlength{\parskip}{-0.4em}
+
+% Define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {\mykeywords},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+% Define header, entries and lists custom commands
+\newcommand{\cvHeader}{
+    \begin{tabular}[l]{@{}c@{}}
+        \namefont{\myname}
+    \end{tabular}\hfill%
+    \begin{tabular}[c]{@{}r@{}}
+        \href{mailto:\myemail}{\myemail} \\
+        \hspace{0.2em} \myphone \\
+        \faLinkedin \hspace{0.2em} \href{https://linkedin.com/in/\mylinkedin}{\mylinkedin} \textbullet\ \faGithub \hspace{0.2em} \href{https://github.com/\mygithub}{\mygithub}
+    \end{tabular}%
+    \vspace{-1em}
+}
+
+\newcommand{\cvEntryHeader}[4]{
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1}  & #3 \\
+        #2 & \textit{#4}
+    \end{tabular*}}
+
+\newcommand{\cvProjectHeader}[1]{
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1}
+    \end{tabular*}}
+
+\newcommand{\cvListBegin}{\begin{itemize}[leftmargin=*]}
+\newcommand{\cvListEnd}{\end{itemize}}
+\newcommand{\cvListItem}{\item}
+
+\begin{document}
+    \thispagestyle{empty}
+
+    \cvHeader
+
+    \section*{Experience}
+        \cvEntryHeader
+            {Company}
+            {Position}
+            {Location}
+            {Sep. 2020 - Sep.2020}
+
+            \cvListBegin
+                \cvListItem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \cvListItem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            \cvListEnd
+
+        \cvEntryHeader
+            {Company}
+            {Position}
+            {Location}
+            {Sep. 2020 - Sep.2020}
+
+            \cvListBegin
+                \cvListItem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \cvListItem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            \cvListEnd
+
+    \section*{Education}
+        \cvEntryHeader
+            {Institution}
+            {Degree}
+            {Location}
+            {Sep. 2020 - Sep. 2020}
+
+        \cvListBegin
+            \cvListItem Graduate Coursework: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            \cvListItem Undergraduate Coursework: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        \cvListEnd
+
+    \section*{Projects}
+        \cvProjectHeader
+            {Project Title}
+
+            \cvListBegin
+                \cvListItem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \cvListItem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            \cvListEnd
+
+        \cvProjectHeader
+            {Project Title}
+
+            \cvListBegin
+                \cvListItem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \cvListItem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            \cvListEnd
+
+        \cvProjectHeader
+            {Project Title}
+
+            \cvListBegin
+                \cvListItem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \cvListItem Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            \cvListEnd
+
+
+    \section*{Skills}
+        \cvListBegin
+            \cvListItem \textbf{Programming Languages} Insert here
+            \cvListItem \textbf{Tools \& Technologies} Insert here
+            \cvListItem \textbf{Web Development} Insert here
+            \cvListItem \textbf{Languages} Insert here
+        \cvListEnd
+
+    \section*{Interests}
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here \textbullet\
+        Insert here
+
+\end{document}
